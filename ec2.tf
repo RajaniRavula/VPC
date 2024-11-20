@@ -1,6 +1,6 @@
 # EC2 Instances
 resource "aws_instance" "web" {
-  count         = 2
+  count         = 1
   ami           = "ami-0942ecd5d85baa812" # Amazon Linux 2 AMI
   instance_type = "t2.micro"
   subnet_id     = element(aws_subnet.public.*.id, count.index)
